@@ -7,8 +7,6 @@ import org.junit.Test;
 /**
  * Represents a LegalValuesTest.
  *
- * @author Cam Moore
- *
  */
 public class LegalValuesTest {
 
