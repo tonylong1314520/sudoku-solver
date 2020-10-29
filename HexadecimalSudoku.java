@@ -4,10 +4,6 @@ import java.util.ArrayList;
  * Class for recursively finding a solution to a Hexadecimal Sudoku problem.
  * I utilized multiple helper methods to solve this sudoku puzzle.
  * @author tonyl
- * 
- * @author Biagioni, Edoardo, Cam Moore
- *     date August 5, 2016
- *     missing solveSudoku, to be implemented by the students in ICS 211
  */
 public class HexadecimalSudoku {
 
@@ -36,16 +32,7 @@ public class HexadecimalSudoku {
     return checkSudoku(sudoku, false);
   }
   
-  /**
-   * Recursive helper method.
-   * @param sudoku the sudoku to be solved
-   * @param row the row to try and solve
-   * @param col the column to try and solve
-   * 
-   * @return true if the sudoku has a solution
-   * @return false if the sudoku doesn't have a solution
-   */
-
+  //Recursive helper method.
   private static boolean solveSudoku(int[][] sudoku, int row, int col) {
     //Create an arraylist of valid ints
     ArrayList<Integer> validInts = legalValues(sudoku, row, col);
@@ -71,14 +58,7 @@ public class HexadecimalSudoku {
     return false;
   }
 
-  /**
-   * Find the legal values for the given sudoku and cell.
-   *
-   * @param sudoku the sudoku being solved.
-   * @param row the row of the cell to get values for.
-   * @param column the column of the cell.
-   * @return an ArrayList of the valid values.
-   */
+  //Find the legal values for the given sudoku and cell.
   public static ArrayList<Integer> legalValues(int[][] sudoku, int row, int column) {
     // Create an ArrayList of legal values for each cell
     ArrayList<Integer> legalValues = new ArrayList<Integer>();
@@ -98,16 +78,7 @@ public class HexadecimalSudoku {
     return legalValues;
   }
 
-  /** helper method to check the 4x4 square.
-   * 
-   * @param sudoku - the sudoku example
-   * @param row - the row in the square
-   * @param col - the column in the square
-   * @param comp - the comparison value
-   * @return true - if the single cell value does not match the comparison value
-   * @return false - if the single cell valeu does match tehc comp value
-   */
-
+  // check 4x4 squares of sudoku puzzle
   private static boolean checkSquare(int[][] sudoku, int row, int col, int comp) {
     // Need to make a variable to hold the rows and columns in the 4x4
     int sqRow = (row / 4) * 4;
@@ -127,15 +98,7 @@ public class HexadecimalSudoku {
     return true;
   }
 
-  /** helper method to check a row.
-   * 
-   * @param sudoku - the sudoku example
-   * @param row  - the value of the row to check
-   * @param comp - the comparison number to check
-   * @return true if the value is not in the col
-   * @return false if the value is in the column
-   */
-
+  // helper method to check a row.
   private static boolean checkRow(int[][] sudoku, int row, int comp) {
     //Iterate through each row
     for (int i = 0; i < 16; i++) {
@@ -149,15 +112,7 @@ public class HexadecimalSudoku {
     return true;
   }
   
-  /** helper method to check the column.
-   * 
-   * @param sudoku the sudoku example
-   * @param col the column to compare to
-   * @param comp the comparison value
-   * @return true if the value isn't in the comparator row
-   * @return false if the value is in the row
-   */
-
+  // helper method to check the column.
   private static boolean checkColumn(int[][] sudoku, int col, int comp) {
     //Iterate through the columns
     for (int i = 0; i < 16; i++) {
@@ -170,14 +125,8 @@ public class HexadecimalSudoku {
     //If not, return true
     return true;
   }
-  
-  /**
-   * checks that the sudoku rules hold in this sudoku puzzle. cells that contain
-   * 0 are not checked.
-   * @param sudoku the sudoku to be checked.
-   * @param printErrors whether to print the error found, if any.
-   * @return true if this sudoku obeys all of the sudoku rules, otherwise false.
-   */
+
+  // checks that the sudoku rules hold in this sudoku puzzle. cells that contain
   public static boolean checkSudoku(int[][] sudoku, boolean printErrors) {
     if (sudoku.length != 16) {
       if (printErrors) {
@@ -248,14 +197,7 @@ public class HexadecimalSudoku {
     return true;
   }
 
-
-  /**
-   * Converts the sudoku to a printable string.
-   *
-   * @param sudoku the sudoku to be converted.
-   * @param debug whether to check for errors.
-   * @return the printable version of the sudoku.
-   */
+  // Converts the sudoku to a printable string.
   public static String toString(int[][] sudoku, boolean debug) {
     if ((!debug) || (checkSudoku(sudoku, true))) {
       String result = "";
