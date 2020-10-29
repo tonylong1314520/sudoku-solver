@@ -1,4 +1,3 @@
-package edu.ics211.h09;
 
 /**
  * Test a HexadecimalSudoku solver.
