@@ -1,10 +1,6 @@
 
 /**
  * Test a HexadecimalSudoku solver.
- *
- * @author Biagioni, Edoardo and Cam Moore
- *     date August 5, 2016
- *     bugs none
  */
 public class HexadecimalSudokuTest {
 
